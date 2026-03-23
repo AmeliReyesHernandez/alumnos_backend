@@ -14,8 +14,10 @@ public class Alumno {
 
     private String numeroControl;
     private String nombre;
-    private String apellido;
+    private String apellidoPaterno;
+    private String apellidoMaterno;
     private String telefono;
+    private String lada;
     private String email;
     private String carrera;
     private String imagenURL;
@@ -36,12 +38,20 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getApellidoPaterno() {
+        return apellidoPaterno;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setApellidoPaterno(String apellidoPaterno) {
+        this.apellidoPaterno = apellidoPaterno;
+    }
+
+    public String getApellidoMaterno() {
+        return apellidoMaterno;
+    }
+
+    public void setApellidoMaterno(String apellidoMaterno) {
+        this.apellidoMaterno = apellidoMaterno;
     }
 
     public String getEmail() {
@@ -66,6 +76,14 @@ public class Alumno {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public String getLada() {
+        return lada;
+    }
+
+    public void setLada(String lada) {
+        this.lada = lada;
     }
 
     public String getCarrera() {

@@ -51,10 +51,12 @@ public class AlumnoController {
     public ResponseEntity<Alumno> actualizarAlumno(@PathVariable Long id, @RequestBody Alumno alumno) {
         return alumnoRepository.findById(id).map(alumnoExistente -> {
             alumnoExistente.setNombre(alumno.getNombre());
-            alumnoExistente.setApellido(alumno.getApellido());
+            alumnoExistente.setApellidoPaterno(alumno.getApellidoPaterno());
+            alumnoExistente.setApellidoMaterno(alumno.getApellidoMaterno());
             alumnoExistente.setEmail(alumno.getEmail());
             alumnoExistente.setNumeroControl(alumno.getNumeroControl());
             alumnoExistente.setTelefono(alumno.getTelefono());
+            alumnoExistente.setLada(alumno.getLada());
             alumnoExistente.setCarrera(alumno.getCarrera());
             alumnoExistente.setImagenURL(alumno.getImagenURL());
             Alumno actualizado = alumnoRepository.save(alumnoExistente);
