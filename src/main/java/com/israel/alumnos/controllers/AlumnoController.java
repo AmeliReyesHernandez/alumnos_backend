@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/alumnos")
-@CrossOrigin(origins = "*")
 public class AlumnoController {
 
     @Autowired
