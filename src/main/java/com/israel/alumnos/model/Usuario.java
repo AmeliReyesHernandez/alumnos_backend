@@ -1,9 +1,8 @@
 package com.israel.alumnos.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 public class Usuario {
@@ -13,6 +12,12 @@ public class Usuario {
     
     private String usuario;
     private String password;
+    private String fechaRegistro;
+
+    @PrePersist
+    protected void onCreate() {
+        this.fechaRegistro = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    }
 
     public Long getId() {
         return id;
@@ -36,5 +41,13 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getFechaRegistro() {
+        return fechaRegistro != null ? fechaRegistro : "24/04/2026";
+    }
+
+    public void setFechaRegistro(String fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
     }
 }

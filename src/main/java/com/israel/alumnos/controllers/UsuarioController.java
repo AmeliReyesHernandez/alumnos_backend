@@ -42,4 +42,9 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
         }
     }
+
+    @GetMapping("/listar")
+    public ResponseEntity<java.util.List<Usuario>> listar() {
+        return ResponseEntity.ok(usuarioService.obtenerTodos());
+    }
 }
